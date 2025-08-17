@@ -1,0 +1,78 @@
+Step:1
+
+we will create the ui required.
+
+we have 2 sections
+
+(1)SideBar section
+(2)MainBar section
+
+so the base ui will be saved as a pdf file view it if u need. 
+
+
+Step 2:-
+
+since, we created the base UI.
+
+Mow we have to create functionality. So, at first we need to get the code from the gemini docs and the gemini api. but, first it didnt work. so i took the liberty to generate the essential code for the response generation for the given prompt using Grok.ai 
+
+Now what, we need to is, we have to introduce the api async await concept inside the code which i did in the GeminiApiFetchHook. as usual just like i create the custom hook for api fetching i use, useCallback and useEffect hooks and i use useState for loading options. and at finally we are returning 4 values.
+
+{text,setText,loading,main} . since, u need to know that when we click the arrow button in input, automatically we are changing the prompt (from being an empty string to something) so, if prompt is changed the main function has to be called or executed keeping the input as the parameter. 
+
+thus, we will require a lot useState hooks and various values. But, if we initialize it a separate component and use prop drilling method it will be an headache. that's why we need useContext
+
+a hook which will create a context object that stores multiple values (behaves as a container) and u can access all those values at any component after u have wrapped the component inside the function which contains the context object.
+
+so, at first u have to create the context that's why we use createContext() and export the context object so, that u can access it after wrapping.
+
+and, secondly, we will be providing the context with the required data, to be stored. thus, we use:-
+
+<contextName.provider value={<actual values>}>
+{children}
+</contextName>
+
+this children is referred to all the components that has been wrapped inside the function of the context object.
+
+but, remember. always the components to be wrapped should be wrapped with the function or the component inside which the actual context was created
+
+that's why i have wrapped the children components in App.jsx with myContext.jsx
+
+and finally pass the children prop as the parameter in the myContext component. And also,to access the context u created after wrapping the required components. U have to destructure the values, using the useContext(<context object name>)
+
+voila! now u can access all the values 
+
+ok, now the concept is clear i have noticed an important thing. The thing is, while onClick the input send button we are calling the main(prompt). so ur operations including displaying the result depends on the execution of the main(). thus, get all the useContext values in the hook itself and set the parameters
+
+
+
+Now, the modifications i did in the main() to showcase the results u can understand. 
+
+
+
+Step 3:
+
+Loading and text-animations
+
+Loading is pure css, thus used 3 hr tags and css to display loading.
+
+Now, we shall use a function delayPara() in myContext.jsx to create text-animations. understanding the logic is important
+
+
+step 4:-
+
+SideBar updation:
+
+Easy step, just use setPreviousResponse to override the initial previousResponse array with the prev data in previousResponse along with prompt.
+
+I did a mistake of using input in the place of prompt, since we used input, we didnt the value we enetered at the input box in the sideBar. Why? coz, we refreshed input (setInput="") as soon as the main function gets executed completely. this caused an empty input value. thus,the updated input is empty causing the (recent) printed in sideBar also empty.
+
+Thus, when we use prompt which is used as the parameter, we can retain the result properly.
+
+
+
+Step 5:-
+
+I have changed the cards text and given functionality that when they are clicked my details are given as an answer
+
+One of the sleakest moves i made

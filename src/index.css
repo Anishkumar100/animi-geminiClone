@@ -1,0 +1,39 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
+#root
+{
+    min-height: 100vh;
+    display: flex;
+    animation: fadeIn 1.5s;
+}
+
+/*
+Here we have given flex to root element, since we have only 2 main components.
+
+1)SideBar
+2)MainSection
+
+Both these components are side by side. That's why we gave flex
+*/
+
+
+
+/*Responsiveness*/
+
+@keyframes fadeIn
+{
+    0%
+    {
+        opacity:0;
+    }
+    100%
+    {
+        opacity:1;
+    }
+}

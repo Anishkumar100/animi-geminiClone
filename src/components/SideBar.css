@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/*
+This is the css for the whole sideBar
+*/
+.sideBar
+{
+    min-height: 100vh;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #f0f4f9;
+    padding: 25px 15px;
+    color:#282828;
+    font-family: "outfit";
+
+}
+
+
+/*Now the css for the icons*/
+.sideBar img
+{
+    width: 20px;
+
+}
+
+ /* Styling only menu icon*/
+.sideBar .menu
+{
+   display: block;
+   margin-left: 10px;
+   cursor:pointer;
+}
+
+.sideBar .new-chat
+{
+    margin-top:50px;
+    display: inline-flex;
+    align-items: center;
+    gap:10px;
+    padding: 10px 15px;
+    background-color: rgb(207, 201, 201);
+    border-radius: 50px;
+    font-size: 14px;
+    color:gray;
+    cursor: pointer;
+}
+
+.sideBar .recent
+{
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1.5s;
+
+}
+
+.sideBar .recent-title
+{
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+@media (max-width:600px)
+{
+    .sideBar
+    {
+        display: none;
+    }
+}
+
+/* since recent-entry is given as a className to the bottom icons, its properties where applied to them as well*/
+.sideBar .recent-entry
+{
+    display: flex;
+    align-items: start;
+    gap:10px;
+    padding: 10px;
+    padding-right: 40px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.sideBar .recent-entry:hover
+{
+    background-color: rgb(207, 205, 205) ;
+}
+
+.sideBar .bottom
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.sideBar .bottom-item
+{
+    padding-right: 10px;
+    cursor: pointer;
+}
