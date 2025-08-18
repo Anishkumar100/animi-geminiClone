@@ -44,7 +44,7 @@ export const MainSection = () =>
           </div>
 
           <div onClick={()=>{
-            const question ="Describe Anish Kumar’s entrepreneurial journey as the co-founder of Spark Solutions, a student-led MSME-registered student organization. Explain how Spark Solutions was founded, its official website (https://sparksolution.org), the inspiration behind it, its mission, and the kind of impact it's creating through web solutions, student projects, and tech services. The tone should be professional and visionary."
+            const question ="Describe Anish Kumar’s journey as the co-founder of Spark Solutions, a student-led MSME-registered student organization. Explain how Spark Solutions was founded, its official website (https://sparksolution.org), the inspiration behind it, its mission, and the kind of impact it's creating through web solutions, student projects, and tech services. The tone should be professional and visionary."
             setPrompt(question)}} className="card">
             <p>Describe Anish Kumar’s journey as the co-founder of Spark Solutions, a MSME-registered student organization. Explain how Spark Solutions was founded, its official website (https://sparksolution.org), the inspiration behind it, its mission, and the kind of impact it's creating through web solutions, student projects, and tech services. The tone should be professional and visionary.
 
